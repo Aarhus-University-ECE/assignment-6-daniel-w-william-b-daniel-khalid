@@ -21,9 +21,17 @@ void add(node *head, int x) {
 
 // exersice 3.b
 int size(node *l) {
-
-	return 0;
+    int size;
+    node *p;
+    p = l;
+    int i = 1;
+    while(p->next != NULL){
+        p = p->next;
+        i++;
+    }
+    return i;
 }
+
 
 // exersice 3.c and 3.d
 void printout(node *l) {
@@ -31,8 +39,9 @@ void printout(node *l) {
   //       The last element's next is NULL
   // post: The values of the list are printed out
   node *p = l->next;
-  while (p != NULL) {
+  while (p->next != NULL) {
     printf("%d, ", p->data);
+    p = p->next;
   }
   printf("\n");
 }

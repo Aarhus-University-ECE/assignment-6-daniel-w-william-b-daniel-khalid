@@ -37,10 +37,10 @@ void printout(node *l) {
   // pre:  head points to the first, empty element.
   //       The last element's next is NULL
   // post: The values of the list are printed out
-  node *p = l->next;
+  node *p = l;
   while (p->next != NULL) {
-    printf("%d, ", p->data);
     p = p->next;
+    printf("%d, ", p->data);
   }
   printf("\n");
 }
@@ -50,8 +50,22 @@ int largest(node *l) {
   // pre:  head poinst to the first, empty element.
   // 	     The last element's next is NULL.
   // post: Returns the largest value of the list
-
-  return 0;
+  node *p = l;  /*We make a pointer l, that points the same adress as l, so we dont change l and the list*/
+  p = p->next;
+  int max = p->data;
+  int numb;
+  while (p->next != NULL){
+    int numb = p->data;
+    if (numb > max){
+      max = numb;
+    }
+    p = p->next;
+  }
+  int numb = p->data;
+  if (numb > max){
+    max = numb;
+  }
+  return max;
 }
 
 #ifndef TEST

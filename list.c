@@ -39,8 +39,8 @@ void printout(node *l) {
   // post: The values of the list are printed out
   node *p = l;
   while (p->next != NULL) {
-    p = p->next;
-    printf("%d, ", p->data);
+    p = p->next;              /*Sets p to point at the next element in the list*/
+    printf("%d, ", p->data);  /*Prints the data value of the */
   }
   printf("\n");
 }
@@ -51,19 +51,16 @@ int largest(node *l) {
   // 	     The last element's next is NULL.
   // post: Returns the largest value of the list
   node *p = l;  /*We make a pointer l, that points the same adress as l, so we dont change l and the list*/
-  p = p->next;
-  int max = p->data;
+  node *m = l->next; /*We make a pointer m, which point to the first element after head*/
+  int max = m->data; /*The max value is the value of data for the node that p points to*/
   int numb;
-  while (p->next != NULL){
+  while (p->next != NULL){ /*While loop sees if any af the data values are higher than max for all the elements in the list*/
+    p = p->next;
     numb = p->data;
     if (numb > max){
       max = numb;
     }
-    p = p->next;
-  }
-  numb = p->data;
-  if (numb > max){
-    max = numb;
+    
   }
   return max;
 }

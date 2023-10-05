@@ -55,13 +55,13 @@ int largest(node *l) {
   int max = p->data;
   int numb;
   while (p->next != NULL){
-    int numb = p->data;
+    numb = p->data;
     if (numb > max){
       max = numb;
     }
     p = p->next;
   }
-  int numb = p->data;
+  numb = p->data;
   if (numb > max){
     max = numb;
   }

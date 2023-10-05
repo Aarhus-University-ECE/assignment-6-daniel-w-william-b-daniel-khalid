@@ -21,10 +21,9 @@ void add(node *head, int x) {
 
 // exersice 3.b
 int size(node *l) {
-    int size;
     node *p;
     p = l;
-    int i = 1;
+    int i = 0;
     while(p->next != NULL){
         p = p->next;
         i++;
